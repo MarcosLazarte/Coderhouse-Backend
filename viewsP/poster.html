@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul style="background-color:orange;list-style:none;text-align:center">
+        <li style="display:inline;margin-left:5vw"><a href="http://localhost:8080/api/productos/listar">listar</a></li>
+        <li style="display:inline;margin-left:5vw"><a href="http://localhost:8080/items">items</a></li>
+        <li style="display:inline;margin-left:5vw"><a href="http://localhost:8080/items-random">items-random</a></li>
+        <li style="display:inline;margin-left:5vw"><a href="http://localhost:8080/visitas">visitas</a></li>
+        <li style="display:inline;margin-left:5vw"><a href="http://localhost:8080/api/mensajes/id">id</a></li>
+    </ul>
+    <form method="post" action="/api/guardar">
+        <fieldset>
+            <legend>Datos</legend>
+            Title: <input name="title" type="text">
+            Price: <input name="price" type="text">
+            Thumbnail: <input name="thumbnail" type="text">
+        </fieldset>
+        <input type="submit" value="Grabar Producto">
+    </form>
+
+</body>
+</html>

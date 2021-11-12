@@ -1,0 +1,1 @@
+[{"title":"Producto1","price":"100","thumbnail":"http1","id":0},{"title":"Ploy5","price":"500","thumbnail":"fotoPlay5","id":1},{"title":"xbox","price":"550","thumbnail":"fotoXbox","id":2},{"title":"nintendo swotch","price":"290","thumbnail":"fotoSwitch","id":3}]
