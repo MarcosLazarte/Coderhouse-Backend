@@ -131,11 +131,12 @@ class Rutas {
         const objRes = {
             loQueMandaste: body,
         };
-        res.send(`
-        </div style='display=flex,flex-direction=column'>
-            <div>${JSON.stringify(objRes)} <a href='http://localhost:8080/handlebars/post'></div>
-            <button style='background-color: orange'> Volver </button></a>
-        </div>`); //Respuesta por el comando POST
+        //res.send(`
+        //</div style='display=flex,flex-direction=column'>
+        //    <div>${JSON.stringify(objRes)} <a href='http://localhost:8080/handlebars/post'></div>
+        //    <button style='background-color: orange'> Volver </button></a>
+        //</div>`); //Respuesta por el comando POST
+        res.redirect('http://localhost:8080/handlebars/post');
     }
     funcionBorrar(req,res){
         let dataParaBorrar = Leer();
