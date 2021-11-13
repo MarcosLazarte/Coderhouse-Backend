@@ -12,7 +12,7 @@
         <h1>Vista de<br>Productos</h1>
         <div class="formProductos">
             {{#if listExists}}
-            <table>
+            <table class="tabla">
                 <tr>
                     <th>Nombre</th>
                     <th>Precio</th>
@@ -21,10 +21,14 @@
                 <tr>{{#each suggestedChamps}}
                     <th>{{this.title}}</th>
                     <th>{{this.price}}</th>
-                    <th>{{this.thumbnail}}</th>
+                    <th><img class="tablaImagen" src="{{this.thumbnail}}" alt="Foto de producto"></th>
                 </tr>
                 {{/each}}
             </table>
+            {{else}}
+            <div class="formNoHayProductos">
+                {{suggestedChamps.error}}
+            </div>
             {{/if}}
         </div>
     </div>

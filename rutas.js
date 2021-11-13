@@ -131,7 +131,11 @@ class Rutas {
         const objRes = {
             loQueMandaste: body,
         };
-        res.json(objRes); //Respuesta por el comando POST
+        res.send(`
+        </div style='display=flex,flex-direction=column'>
+            <div>${JSON.stringify(objRes)} <a href='http://localhost:8080/handlebars/post'></div>
+            <button style='background-color: orange'> Volver </button></a>
+        </div>`); //Respuesta por el comando POST
     }
     funcionBorrar(req,res){
         let dataParaBorrar = Leer();
@@ -162,8 +166,13 @@ class Rutas {
     }
     funcionHBSListar(req,res){
         let data = Leer();
-        data.length == 0 ? data={error:'No hay productos cargados'} : data;
-        res.render('listar.hbs', {suggestedChamps: data, listExists: true});
+        if (data.length == 0){
+            var listExists = false;
+            data = {error:'No hay productos'};
+        } else{
+            var listExists = true;
+        }
+        res.render('listar.hbs', {suggestedChamps: data, listExists}); //test - Funcionaba con listExists: true
     }
     ContadorItemsRandom(){
         ++this.visitasItemsRandom;

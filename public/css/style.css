@@ -11,7 +11,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 90vw;
-    height: 90vh;
+    min-height: 90vh;
     padding-top: 5vh;
     padding-bottom: 5vh;
     padding-left: 5vw;
@@ -27,7 +27,30 @@ body{
 .formEnviar{
     width: 10vw;
 }
-.formProductos{
+.formProductosTEMP{
     display: flex;
     flex-direction: column;
+    border-collapse: collapse;
+}
+.tabla{
+    margin-top: 3vw;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #343A40;
+    color: white;
+}
+.tabla td, .tabla th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.tablaImagen{
+    width: calc(5vw + 20px);
+}
+.formNoHayProductos{
+    margin-top: 2vh;
+    width: 80vw;
+    min-height: 10vw;
+    background-color: blanchedalmond;
+    color: goldenrod;
+    font-size: calc(2vw + 14px);
 }
