@@ -1,3 +1,4 @@
+import { query } from 'express';
 import fs from 'fs';
 //prueba en test
 class Rutas {
@@ -187,21 +188,59 @@ class Rutas {
         res.render('actualizar.hbs', {suggestedChamps: data, listExists});
     }
     funcionHBSActualizarTest(req, res){
-        const id = req.query.id;
-        const title = req.query.title;
-        const price = req.query.price;
-        const thumbnail = req.query.thumbnail;
-        const productoObjeto = {
-            id,
-            title,
-            price,
-            thumbnail
-        };
+        if(typeof(req.query.id) != 'string' && typeof(req.query.id) != 'number'){
+            console.log(typeof(req.query.id));
+            res.send('No deberias estar aqui');
+        }else{
+            const id = req.query.id;
+            const title = req.query.title;
+            const price = req.query.price;
+            const thumbnail = req.query.thumbnail;
+            const productoObjeto = {
+                id,
+                title,
+                price,
+                thumbnail
+            };
+            let data = Leer();
+            const index = BuscarIndex(data, id);
+            if(typeof(index) == 'undefined'){
+                res.send('ID no existente')
+            } else {
+                console.log(index); 
+                data.splice(index, 1, productoObjeto);
+                fs.unlinkSync('./productos.txt')<
+                Guardar(data);
+                res.render('actualizar.hbs', {suggestedChamps: data, listExists: true});
+            }
+        }
+    }
+    funcionHBSBorrar(req, res){
         let data = Leer();
-        data.splice(id, 1, productoObjeto);
-        fs.unlinkSync('./productos.txt')<
-        Guardar(data);
-        res.json(productoObjeto);
+        if(data.length == 0){
+            var listExists = false;
+            data = {error: 'No hay productos'};
+        } else {
+            var listExists = true;
+        }
+        res.render('borrar.hbs', {suggestedChamps: data, listExists});
+    }
+    funcionHBSBorrarTest(req, res){
+        let dataParaBorrar = Leer();
+        const index = BuscarIndex(dataParaBorrar, req.query.id);
+        if(typeof(index) == 'undefined'){
+            res.send('ID no existente')
+        } else {
+            let dataEliminada = dataParaBorrar.splice(index, 1);
+            fs.unlinkSync('./productos.txt');
+            Guardar(dataParaBorrar);
+            const objRes = {
+                id: index,
+                productoEliminado: dataEliminada[0],
+                error: false
+            }
+            res.render('borrar.hbs', {suggestedChamps: dataParaBorrar, listExists: true});
+        }
     }
     ContadorItemsRandom(){
         ++this.visitasItemsRandom;
@@ -210,6 +249,14 @@ class Rutas {
     ContadorItems(){
         ++this.visitasItems;
         return this.visitasItems;
+    }
+}
+function BuscarIndex(data, queryID){
+    for(let i = 0; i<data.length; i++){
+        if(data[i].id == queryID){
+            console.log(data[i].id)
+            return i;
+        }
     }
 }
 function Leer(){ //Devuelve array con los objetos
@@ -246,20 +293,35 @@ function Guardar(body){
             }
         }else{ //existe, entonces añade
             let arrayProductos = JSON.parse(contenido);
-            let ubicacionId = arrayProductos.length - 1; //Detecto el lugar donde estaría el ultimo producto del array para encontrar el id
-            let id2 = arrayProductos[ubicacionId].id + 1;
-            let idProducto2 = {id: id2}
-            let productoMasId = Object.assign(body,idProducto2);
-            
-            arrayProductos.push(productoMasId);
-            console.log(arrayProductos)
-            fs.unlinkSync('./productos.txt');
-            try{
-                fs.appendFileSync('./productos.txt', `${JSON.stringify(arrayProductos)}\n`);
-            }catch(error){
-                console.log(productoMasId)
-                fs.writeFileSync('./productos.txt', `${JSON.stringify(arrayProductos)}\n`);
+            if(arrayProductos.length == 0){ //Cuando borraba todo y quedaba un array vacio, no entendia como agregar, por eso estas lineas
+                let productomasId = Object.assign(body,{id:0})
+                arrayProductos.push(productomasId);
+                console.log(arrayProductos)
+                fs.unlinkSync('./productos.txt');
+                try{
+                    fs.appendFileSync('./productos.txt', `${JSON.stringify(arrayProductos)}\n`);
+                }catch(error){
+                    console.log(productoMasId)
+                    fs.writeFileSync('./productos.txt', `${JSON.stringify(arrayProductos)}\n`);
+                }
+            } else {
+                console.log('contenido: ' +typeof(contenido));
+                let ubicacionId = arrayProductos.length - 1; //Detecto el lugar donde estaría el ultimo producto del array para encontrar el id
+                let id2 = arrayProductos[ubicacionId].id + 1;
+                let idProducto2 = {id: id2}
+                let productoMasId = Object.assign(body,idProducto2);
+                
+                arrayProductos.push(productoMasId);
+                console.log(arrayProductos)
+                fs.unlinkSync('./productos.txt');
+                try{
+                    fs.appendFileSync('./productos.txt', `${JSON.stringify(arrayProductos)}\n`);
+                }catch(error){
+                    console.log(productoMasId)
+                    fs.writeFileSync('./productos.txt', `${JSON.stringify(arrayProductos)}\n`);
+                }
             }
+
         }
     });
 }

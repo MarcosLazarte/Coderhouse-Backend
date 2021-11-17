@@ -1,1 +1,1 @@
-[{"id":"0","title":"Mermelada","price":"99999","thumbnail":"fotoMel"},{"title":"test","price":"999","thumbnail":"test","id":"1"},{"title":"pizza","price":"999","thumbnail":"testpizza","id":"2"}]
+[{"title":"test","price":"121","thumbnail":"test","id":0}]
