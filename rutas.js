@@ -175,6 +175,34 @@ class Rutas {
         }
         res.render('listar.hbs', {suggestedChamps: data, listExists}); //test - Funcionaba con listExists: true
     }
+    funcionHBSActualizar(req,res){
+        let data = Leer();
+        if (data.length == 0){
+            var listExists = false;
+            data = {error:'No hay productos'};
+        } else{
+            var listExists = true;
+        }
+        console.log(data);
+        res.render('actualizar.hbs', {suggestedChamps: data, listExists});
+    }
+    funcionHBSActualizarTest(req, res){
+        const id = req.query.id;
+        const title = req.query.title;
+        const price = req.query.price;
+        const thumbnail = req.query.thumbnail;
+        const productoObjeto = {
+            id,
+            title,
+            price,
+            thumbnail
+        };
+        let data = Leer();
+        data.splice(id, 1, productoObjeto);
+        fs.unlinkSync('./productos.txt')<
+        Guardar(data);
+        res.json(productoObjeto);
+    }
     ContadorItemsRandom(){
         ++this.visitasItemsRandom;
         return this.visitasItemsRandom;

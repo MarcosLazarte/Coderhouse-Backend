@@ -59,6 +59,8 @@ app.set('view engine', 'hbs')
 //});
 app.get('/handlebars/post', rutas.funcionHBSPost);
 app.get('/handlebars/vista', rutas.funcionHBSListar);
+app.get('/handlebars/actualizar', rutas.funcionHBSActualizar);
+app.get('/handlebars/actualizarTest', rutas.funcionHBSActualizarTest);
 
 app.post(rutas.guardar, rutas.funcionGuardar);
 app.delete(rutas.borrar, rutas.funcionBorrar); //Metodo Delete para borrar por ID
