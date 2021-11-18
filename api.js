@@ -20,6 +20,7 @@ hbs.get('/borrar', rutas.funcionHBSBorrar);
 hbs.get('/borrarTest', rutas.funcionHBSBorrarTest);
 
 pug.get('/vista', rutas.funcionPUGListar);
+pug.get('/post', rutas.functionPUGPost);
 
 //app.set('views', path.join(__dirname, '../viewsP'));//motor de plantilla PUG
 //app.set('viewsP engine', 'pug');//motor de plantilla PUG

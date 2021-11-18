@@ -137,7 +137,7 @@ class Rutas {
         //    <div>${JSON.stringify(objRes)} <a href='http://localhost:8080/handlebars/post'></div>
         //    <button style='background-color: orange'> Volver </button></a>
         //</div>`); //Respuesta por el comando POST
-        res.redirect('http://localhost:8080/handlebars/post');
+        res.redirect('http://localhost:8080/handlebars/post'); //PROBLEMA Acá debería poner algo para que regrese al que lo llame
     }
     funcionBorrar(req,res){
         let dataParaBorrar = Leer();
@@ -243,7 +243,11 @@ class Rutas {
         }
     }
     funcionPUGListar(req, res){
-        res.render('hello.pug', {mensaje: 'usando el pugi'});
+        let data = Leer();
+        res.render('vista.pug', {productos: data});
+    }
+    functionPUGPost(req, res){
+        res.render('post.pug')
     }
     ContadorItemsRandom(){
         ++this.visitasItemsRandom;

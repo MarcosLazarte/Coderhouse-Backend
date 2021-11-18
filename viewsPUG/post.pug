@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title PUG/Vista
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        a(href='http://localhost:8080/pug/vista'): span Vista
+        a(href='http://localhost:8080/pug/actualizar'): span Actualizar
+        a(href='http://localhost:8080/pug/borrar'): span Borrar
+        a(href='http://localhost:8080/pug/post'): span Post
+        div(class='formulario')
+            h1 Vista
+            h1 de Productos
+            form(method="post" action='/guardar')
+                h1 Ingrese
+                h1 Producto 
+                h3 Nombre 
+                input(type="text" name='title')
+                h3 Precio 
+                input(type="text" name='price')
+                h3 Foto URL 
+                input(type="text" name='thumbnail')
+                input(type="submit") 

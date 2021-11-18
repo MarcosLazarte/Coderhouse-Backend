@@ -50,13 +50,13 @@ app.use('/pug', pug);
 app.use('/hbs', hbs);
 
 //Pug
-//app.set('views','./viewsPUG');
+app.set('views','./viewsPUG');
 app.set('view engine', 'pug');
 //Pug
 
 //Handlebars
 //app.set('views', __dirname + '/viewsHBS');
-app.set('view engine', 'hbs')
+//app.set('view engine', 'hbs')
 //Handlebars
 
 //pug.get('/vista', rutas.funcionPUGListar);
