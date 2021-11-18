@@ -2,7 +2,9 @@ import express from 'express';
 import http from 'http';
 import socketIo from 'socket.io';
 import rutas from './rutas.js';
-import router from './api.js';
+import {router, hbs, pug} from './api.js';
+//import hbs from './api.js';
+//import pug from './api.js';
 
 
 const app = express();
@@ -44,26 +46,20 @@ app.use(express.json()); //Linea Clave que sin ella no sirve nada
 app.use(express.urlencoded({extended: true})); //Linea Clave que sin ella no sirve nada
 
 app.use('/api', router);//Le digo a router que use esa salida
+app.use('/pug', pug);
+app.use('/hbs', hbs);
 
 //Pug
-
+//app.set('views','./viewsPUG');
+app.set('view engine', 'pug');
 //Pug
 
 //Handlebars
-app.set('views', __dirname + '/views');
+//app.set('views', __dirname + '/viewsHBS');
 app.set('view engine', 'hbs')
 //Handlebars
 
-//app.get('/handlebars', (req,res) => {//motor de plantilla
-//    res.render('index.hbs');
-//});
-app.get('/handlebars/post', rutas.funcionHBSPost);
-app.get('/handlebars/vista', rutas.funcionHBSListar);
-app.get('/handlebars/actualizar', rutas.funcionHBSActualizar);
-app.get('/handlebars/actualizarTest', rutas.funcionHBSActualizarTest);
-app.get('/handlebars/borrar', rutas.funcionHBSBorrar);
-app.get('/handlebars/borrarTest', rutas.funcionHBSBorrarTest);
-
+//pug.get('/vista', rutas.funcionPUGListar);
 app.post(rutas.guardar, rutas.funcionGuardar);
 app.delete(rutas.borrar, rutas.funcionBorrar); //Metodo Delete para borrar por ID
 app.put(rutas.actualizar, rutas.funcionActualizar); //Metodo PUT para actualizar por ID

@@ -242,6 +242,9 @@ class Rutas {
             res.render('borrar.hbs', {suggestedChamps: dataParaBorrar, listExists: true});
         }
     }
+    funcionPUGListar(req, res){
+        res.render('hello.pug', {mensaje: 'usando el pugi'});
+    }
     ContadorItemsRandom(){
         ++this.visitasItemsRandom;
         return this.visitasItemsRandom;

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "ServerES6toJS5": "babel .\\server.es6.js -o .\\server.js",
-    "ServerTStoJS5": "tsc .\\server.ts"
+    "ServerTStoJS5": "tsc .\\server.ts",
+    "start": "node serverplus.js"
   },
   "keywords": [],
   "author": "",
