@@ -4,7 +4,7 @@ import socketIo from 'socket.io';
 import rutas from './rutas.js';
 import router from './api.js';
 
-
+const test = 4; //constante test
 const app = express();
 const server = http.Server(app);
 const io = socketIo(server);
