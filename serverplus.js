@@ -6,7 +6,7 @@ import {router, hbs, pug} from './api.js';
 //import hbs from './api.js';
 //import pug from './api.js';
 
-
+const test = 4; //constante test
 const app = express();
 const server = http.Server(app);
 const io = socketIo(server);
