@@ -18,11 +18,6 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.use(express.static('public'));
 
-/* const server2 = app.listen(PORT, ()=>{
-    console.log('Servidor HTTP escuchando en el puerto', server.address().port);
-});
-server2.on('error', error=>console.log('Error en servidor', error));
- */
 server.listen(PORT, () => {
     console.log('escuchando');
 });

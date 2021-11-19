@@ -4,7 +4,7 @@ class Rutas {
     constructor(){
         this.productos = [];
         this.listar = '/productos/listar';
-        this.actualizar = '/productos/actualizar/:id'; //thunder
+        this.actualizar = '/actualizar/:id'; //thunder
         this.id = '/mensajes/id';
         this.items = '/items';
         this.itemsRandom = '/items-random';
