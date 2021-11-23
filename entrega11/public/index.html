@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Express</title>
-    <script src="./socket.io/socket.io.js"></script>
-    <script src="./index.js"></script>
 </head>
 <body>
     <header>
@@ -21,56 +19,15 @@
             <p>DELETE: http://localhost:8080/borrar/:id</p>
         </div>
         <div>
-            <h2>Enlaces HBS</h2>
-            <p><a href="http://localhost:8080/hbs/vista">GET: http://localhost:8080/hbs/vista</a></p>
-            <p><a href="http://localhost:8080/hbs/post">POST :http://localhost:8080/hbs/post</a></p>
-            <p><a href="http://localhost:8080/hbs/actualizar">PUT: http://localhost:8080/hbs/borrar</a></p>
-            <p><a href="http://localhost:8080/hbs/borrar">DELETE: http://localhost:8080/hbs/borrar</a>
+            <h2>Enlaces PUG</h2>
+            <p><a href="http://localhost:8080/pug/vista">GET: http://localhost:8080/pug/vista</a></p>
+            <p><a href="http://localhost:8080/pug/post">POST :http://localhost:8080/pug/post</a></p>
+            <p><a href="http://localhost:8080/pug/actualizar">PUT: http://localhost:8080/pug/borrar</a></p>
+            <p><a href="http://localhost:8080/pug/borrar">DELETE: http://localhost:8080/pug/borrar</a>
         </div>
     </main>
     <footer>
-
+        <h3>Aky - Backend</h3>
     </footer>
-<!--
-    <ul style="background-color:orange;list-style:none;text-align:center">
-        <li style="display:inline;margin-left:5vw"><a href="http://localhost:8080">HOME</a></li>
-        <li style="display:inline;margin-left:5vw"><a href="http://localhost:8080/api/productos/listar">listar</a></li>
-        <li style="display:inline;margin-left:5vw"><a href="http://localhost:8080/items">items</a></li>
-        <li style="display:inline;margin-left:5vw"><a href="http://localhost:8080/items-random">items-random</a></li>
-        <li style="display:inline;margin-left:5vw"><a href="http://localhost:8080/visitas">visitas</a></li>
-        <li style="display:inline;margin-left:5vw"><a href="http://localhost:8080/api/mensajes/id">id</a></li>
-    </ul>
-    <form method="post" action="/guardar">
-        <fieldset>
-            <legend>Post Producto Nuevo</legend>
-            Title: <input name="title" type="text">
-            Price: <input name="price" type="text">
-            Thumbnail: <input name="thumbnail" type="text">
-        </fieldset>
-        <input type="submit" value="Grabar Producto">
-    </form>
-    <div>
-        <fieldset>
-            <legend>Contenido</legend>
-            <div id="productosListar">
-
-            </div>
-        </fieldset>
-
-    </div>
-    <div>
-        <fieldset>
-            <legend>Chat</legend>
-            <div id="mensajes"></div>
-            <form onsubmit="return enviarMensajes(this)">
-                <input type="text" id="nombre">
-                <input type="text" id="mensaje">
-                <input type="submit">
-            </form>
-        </fieldset>
-        <br>
-    </div>
-    <script type="module" src="first.js"></script> 
--->
 </body>
 </html>

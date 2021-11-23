@@ -25,7 +25,7 @@ class Rutas {
         const objRes = {
             loQueMandaste: body,
         };
-        res.redirect('http://localhost:8080/hbs/post'); //PROBLEMA Acá debería poner algo para que regrese al que lo llame
+        res.redirect('http://localhost:8080/pug/post'); //PROBLEMA Acá debería poner algo para que regrese al que lo llame
     }
     funcionObtener(req,res){
         res.json(Leer());
@@ -54,10 +54,10 @@ class Rutas {
         Guardar(data);
         res.json(productoActualizadoMasId);
     }
-    funcionHBSPost(req,res){
-        res.render('index.hbs');
+    funcionPUGPost(req,res){
+        res.render('post.pug');
     }
-    funcionHBSListar(req,res){
+    funcionPUGListar(req,res){
         let data = Leer();
         if (data.length == 0){
             var listExists = false;
@@ -65,9 +65,9 @@ class Rutas {
         } else{
             var listExists = true;
         }
-        res.render('listar.hbs', {suggestedChamps: data, listExists}); //test - Funcionaba con listExists: true
+        res.render('vista.pug', {productos: data, listExists}); //test - Funcionaba con listExists: true
     }
-    funcionHBSActualizar(req,res){
+    funcionPUGActualizar(req,res){
         let data = Leer();
         if (data.length == 0){
             var listExists = false;
@@ -76,9 +76,9 @@ class Rutas {
             var listExists = true;
         }
         console.log(data);
-        res.render('actualizar.hbs', {suggestedChamps: data, listExists});
+        res.render('actualizar.pug', {productos: data, listExists});
     }
-    funcionHBSActualizarTest(req, res){
+    funcionPUGActualizarTest(req, res){
         if(typeof(req.query.id) != 'string' && typeof(req.query.id) != 'number'){
             console.log(typeof(req.query.id));
             res.send('No deberias estar aqui');
@@ -102,11 +102,11 @@ class Rutas {
                 data.splice(index, 1, productoObjeto);
                 fs.unlinkSync('./productos.txt')<
                 Guardar(data);
-                res.render('actualizar.hbs', {suggestedChamps: data, listExists: true});
+                res.render('actualizar.pug', {productos: data, listExists: true});
             }
         }
     }
-    funcionHBSBorrar(req, res){
+    funcionPUGBorrar(req, res){
         let data = Leer();
         if(data.length == 0){
             var listExists = false;
@@ -114,9 +114,9 @@ class Rutas {
         } else {
             var listExists = true;
         }
-        res.render('borrar.hbs', {suggestedChamps: data, listExists});
+        res.render('borrar.pug', {productos: data, listExists});
     }
-    funcionHBSBorrarTest(req, res){
+    funcionPUGBorrarTest(req, res){
         let dataParaBorrar = Leer();
         const index = BuscarIndex(dataParaBorrar, req.query.id);
         if(typeof(index) == 'undefined'){
@@ -130,7 +130,7 @@ class Rutas {
                 productoEliminado: dataEliminada[0],
                 error: false
             }
-            res.render('borrar.hbs', {suggestedChamps: dataParaBorrar, listExists: true});
+            res.render('borrar.pug', {productos: dataParaBorrar, listExists: true});
         }
     }
 }

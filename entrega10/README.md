@@ -1,3 +1,7 @@
+Manejo de handlebars y llamados
+
+Hacer node serverplus.js
+
 Links para hacer POST, PUT y DELETE en postman/thunder:
 -Get: http://localhost:8080/obtener
 -Put: http://localhost:8080/actualizar/:id (Usa req.params y req.body)

@@ -4,10 +4,13 @@
     box-sizing: border-box;
 }
 body{
-    background-color: cadetblue;
+    background-color: #EFCCA3;
+}
+h1{
+    color: #EFEFEF;
 }
 .formulario{
-    background: burlywood;
+    background: #4F2E27;
     display: flex;
     flex-direction: column;
     width: 90vw;

@@ -1,7 +1,7 @@
 import express from 'express';
 import http from 'http';
 import rutas from './rutas.js';
-import {hbs} from './api.js';
+import {pug} from './api.js';
 
 const app = express();
 const server = http.Server(app);
@@ -23,12 +23,12 @@ server.on('error', error =>console.log("error en el servidor", error));
 app.use(express.json()); //Linea clave que sin ella no sirve nada
 app.use(express.urlencoded({extended: true})); //Linea Clave que sin ella no sirve nada
 
-app.use('/hbs', hbs);
+app.use('/pug', pug);
 
-//Handlebars
-app.set('views', __dirname + '/viewsHBS');
-app.set('view engine', 'hbs')
-//Handlebars
+//Pug
+app.set('views','./viewsPUG');
+app.set('view engine', 'pug');
+//Pug
 
 app.get(rutas.obtener, rutas.funcionObtener);
 app.post(rutas.guardar, rutas.funcionGuardar);
