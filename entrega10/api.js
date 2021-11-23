@@ -1,7 +1,6 @@
 import express from 'express';
 import rutas from './rutas.js';
 
-const pug = express.Router();
 const hbs = express.Router();
 
 hbs.get('/post', rutas.funcionHBSPost);

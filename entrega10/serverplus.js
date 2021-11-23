@@ -1,18 +1,15 @@
 import express from 'express';
 import http from 'http';
-import socketIo from 'socket.io';
 import rutas from './rutas.js';
 import {hbs} from './api.js';
 
 const app = express();
 const server = http.Server(app);
-const io = socketIo(server);
 const PORT = 8080;
 
 //Para que funcione el __dirname en type:module
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-
 const __dirname = dirname(fileURLToPath(import.meta.url));
 //Para que funcione el __dirname en type:module
 
@@ -23,18 +20,7 @@ server.listen(PORT, () => {
 });
 server.on('error', error =>console.log("error en el servidor", error));
 
-const mensajes = [{nombre:"Aky", texto:'Prueba'}];
-
-io.on('connection', (socket) => { //socket es el que se quiere conectar conmigo
-    console.log('cliente conectado');
-    socket.emit('mensajes', mensajes);
-    socket.on('nuevo', (data) => {
-        mensajes.push(data);
-        io.sockets.emit('mensajes', mensajes);
-    })
-});
-
-app.use(express.json()); //Linea Clave que sin ella no sirve nada
+app.use(express.json()); //Linea clave que sin ella no sirve nada
 app.use(express.urlencoded({extended: true})); //Linea Clave que sin ella no sirve nada
 
 app.use('/hbs', hbs);
@@ -44,6 +30,7 @@ app.set('views', __dirname + '/viewsHBS');
 app.set('view engine', 'hbs')
 //Handlebars
 
+app.get(rutas.obtener, rutas.funcionObtener);
 app.post(rutas.guardar, rutas.funcionGuardar);
 app.delete(rutas.borrar, rutas.funcionBorrar); //Metodo Delete para borrar por ID
 app.put(rutas.actualizar, rutas.funcionActualizar); //Metodo PUT para actualizar por ID

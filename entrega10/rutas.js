@@ -12,6 +12,7 @@ class Rutas {
         this.productoById = '/mensajes/:id';
         this.guardar = '/guardar'; //thunder
         this.borrar = '/borrar/:id'; //thunder
+        this.obtener = '/obtener';
         this.visitasItems = 0;
         this.visitasItemsRandom = 0;
         this.vista = '/productos/vista';
@@ -25,6 +26,9 @@ class Rutas {
             loQueMandaste: body,
         };
         res.redirect('http://localhost:8080/hbs/post'); //PROBLEMA Acá debería poner algo para que regrese al que lo llame
+    }
+    funcionObtener(req,res){
+        res.json(Leer());
     }
     funcionBorrar(req,res){
         let dataParaBorrar = Leer();
@@ -184,9 +188,8 @@ function Guardar(body){
                     fs.writeFileSync('./productos.txt', `${JSON.stringify(arrayProductos)}\n`);
                 }
             } else {
-                console.log('contenido: ' +typeof(contenido));
                 let ubicacionId = arrayProductos.length - 1; //Detecto el lugar donde estaría el ultimo producto del array para encontrar el id
-                let id2 = arrayProductos[ubicacionId].id + 1;
+                let id2 = parseInt(arrayProductos[ubicacionId].id, 10) + 1; //Ya no suma string más un int
                 let idProducto2 = {id: id2}
                 let productoMasId = Object.assign(body,idProducto2);
                 
