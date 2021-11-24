@@ -4,17 +4,29 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #EFCCA3;
+    background-color: #B4CA65;
 }
 h1{
-    color: #EFEFEF;
+    color: #A91E50;
+}
+header{
+    min-height: 10vh;
+    background-color: blue;
+}
+main{
+    min-height: 60vh;
+    background-color: PINK;
+}
+footer{
+    min-height: 30vh;
+    background-color: #FFFFE1;
 }
 .formulario{
-    background: #4F2E27;
+    background: #FFFFE1;
     display: flex;
     flex-direction: column;
     width: 90vw;
-    min-height: 90vh;
+    min-height: 50vh;
     padding-top: 5vh;
     padding-bottom: 5vh;
     padding-left: 5vw;
@@ -36,11 +48,14 @@ h1{
     border-collapse: collapse;
 }
 .tabla{
-    margin-top: 3vw;
     border-collapse: collapse;
-    width: 100%;
     background-color: #343A40;
-    color: white;
+    color: black;
+    background-color: #FFFFE1;
+    width: 94vw;
+    min-height: 30vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 .tabla td, .tabla th{
     border: 1px solid #ddd;
@@ -51,9 +66,30 @@ h1{
 }
 .formNoHayProductos{
     margin-top: 2vh;
+    margin-right: auto;
+    margin-left: auto;
     width: 80vw;
     min-height: 10vw;
-    background-color: blanchedalmond;
-    color: goldenrod;
+    background-color: #FFFFE1;
     font-size: calc(2vw + 14px);
+}
+.header_titulo{
+    margin-left: 3vw;
+}
+.nav{
+    margin-top: 0.8vw;
+    margin-left: 2vw;
+}
+.nav span{
+    margin-left: 1vw;
+    margin-right: 1vw;
+    color: #A91E50;
+}
+.footer_titulo{
+    color: #A91E50;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    bottom: -25vh;
+    position: relative;
 }

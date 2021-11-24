@@ -54,10 +54,10 @@ class Rutas {
         Guardar(data);
         res.json(productoActualizadoMasId);
     }
-    funcionPUGPost(req,res){
-        res.render('post.pug');
+    funcionEJSPost(req,res){
+        res.render('post.ejs');
     }
-    funcionPUGListar(req,res){
+    funcionEJSListar(req,res){
         let data = Leer();
         if (data.length == 0){
             var listExists = false;
@@ -65,9 +65,9 @@ class Rutas {
         } else{
             var listExists = true;
         }
-        res.render('vista.pug', {productos: data, listExists}); //test - Funcionaba con listExists: true
+        res.render('vista.ejs', {productos: data, listExists}); //test - Funcionaba con listExists: true
     }
-    funcionPUGActualizar(req,res){
+    funcionEJSActualizar(req,res){
         let data = Leer();
         if (data.length == 0){
             var listExists = false;
@@ -76,9 +76,19 @@ class Rutas {
             var listExists = true;
         }
         console.log(data);
-        res.render('actualizar.pug', {productos: data, listExists});
+        res.render('actualizar.ejs', {productos: data, listExists});
     }
-    funcionPUGActualizarTest(req, res){
+    funcionEJSBorrar(req,res){
+        let data = Leer();
+        if(data.length == 0){
+            var listExists = false;
+            data = {error: 'No hay productos'};
+        } else {
+            var listExists = true;
+        }
+        res.render('borrar.pug', {productos: data, listExists});
+    }
+    funcionEJSActualizarTest(req, res){
         if(typeof(req.query.id) != 'string' && typeof(req.query.id) != 'number'){
             console.log(typeof(req.query.id));
             res.send('No deberias estar aqui');
@@ -102,21 +112,11 @@ class Rutas {
                 data.splice(index, 1, productoObjeto);
                 fs.unlinkSync('./productos.txt')<
                 Guardar(data);
-                res.render('actualizar.pug', {productos: data, listExists: true});
+                res.render('actualizar.ejs', {productos: data, listExists: true});
             }
         }
     }
-    funcionPUGBorrar(req, res){
-        let data = Leer();
-        if(data.length == 0){
-            var listExists = false;
-            data = {error: 'No hay productos'};
-        } else {
-            var listExists = true;
-        }
-        res.render('borrar.pug', {productos: data, listExists});
-    }
-    funcionPUGBorrarTest(req, res){
+    funcionEJSBorrarTest(req, res){
         let dataParaBorrar = Leer();
         const index = BuscarIndex(dataParaBorrar, req.query.id);
         if(typeof(index) == 'undefined'){
@@ -130,7 +130,7 @@ class Rutas {
                 productoEliminado: dataEliminada[0],
                 error: false
             }
-            res.render('borrar.pug', {productos: dataParaBorrar, listExists: true});
+            res.render('borrar.ejs', {productos: dataParaBorrar, listExists: true});
         }
     }
 }

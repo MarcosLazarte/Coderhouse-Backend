@@ -1,13 +1,11 @@
 import express from 'express';
 import rutas from './rutas.js';
 
-const pug = express.Router();
+const ejs = express.Router();
 
-pug.get('/post', rutas.funcionPUGPost);
-pug.get('/vista', rutas.funcionPUGListar);
-pug.get('/actualizar', rutas.funcionPUGActualizar);
-pug.get('/actualizarTest', rutas.funcionPUGActualizarTest);
-pug.get('/borrar', rutas.funcionPUGBorrar);
-pug.get('/borrarTest', rutas.funcionPUGBorrarTest);
+ejs.get('/vista', rutas.funcionEJSListar);
+ejs.get('/post', rutas.funcionEJSPost);
+ejs.get('/actualizar', rutas.funcionEJSActualizar);
+ejs.get('/borrar', rutas.funcionEJSBorrar);
 
-export {pug};
+export {ejs};

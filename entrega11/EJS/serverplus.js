@@ -1,7 +1,7 @@
 import express from 'express';
 import http from 'http';
 import rutas from './rutas.js';
-import {pug} from './api.js';
+import {ejs} from './api.js'
 
 const app = express();
 const server = http.Server(app);
@@ -23,11 +23,11 @@ server.on('error', error =>console.log("error en el servidor", error));
 app.use(express.json()); //Linea clave que sin ella no sirve nada
 app.use(express.urlencoded({extended: true})); //Linea Clave que sin ella no sirve nada
 
-app.use('/pug', pug);
+app.use('/ejs', ejs);
 
 //Pug
-app.set('views','./viewsPUG');
-app.set('view engine', 'pug');
+app.set('views','./viewsEJS');
+app.set('view engine', 'ejs');
 //Pug
 
 app.get(rutas.obtener, rutas.funcionObtener);
