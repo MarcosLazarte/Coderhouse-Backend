@@ -1,0 +1,146 @@
+[33mcommit d37df29c8a4b26ccbf34c17e9bcf345d5c39a3b3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Tue Nov 23 20:59:17 2021 -0300
+
+    Agregado Delete y PUT
+
+[33mcommit 2f03232a4744ca38276a08582a75e9e175185591[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Tue Nov 23 20:32:12 2021 -0300
+
+    Se agrego get y post en pug
+
+[33mcommit 1e732d52aa6f1b6f8d579a65ae4ebbbbe7c13839[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Tue Nov 23 18:31:07 2021 -0300
+
+    Se mejoro el index, se quito lo que no iba, y se arreglo el post/id
+
+[33mcommit a598b79bddf2a002b5e3416b6e9df7774201cc4c[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Fri Nov 19 01:01:39 2021 -0300
+
+    Se agrego readme
+
+[33mcommit f319b4c5928430ae0a7094f088840d133531fae5[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Fri Nov 19 00:36:10 2021 -0300
+
+    Limpieza de entrega10
+
+[33mcommit 0433a6c62c7feae92d706ecb4be581868314fc04[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Fri Nov 19 00:08:27 2021 -0300
+
+    carpetas
+
+[33mcommit b22d77abcd818579fc6f3961929468a021b522aa[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Thu Nov 18 23:55:26 2021 -0300
+
+    Modificado gitignore
+
+[33mcommit 71e0c0dcb5d2f69014db1574e2b933eec54b975e[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Thu Nov 18 23:54:28 2021 -0300
+
+    Creacion de carpetas
+
+[33mcommit 99ea87ef45bd2c12d3ee0fef04eb4a8e35ee9b7c[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Thu Nov 18 20:26:48 2021 -0300
+
+    PUG implementado
+
+[33mcommit 6a4c1bef4442988f9dbf1ff6a5bcb874d6981610[m
+Merge: 78d82fd 5da9d5c
+Author: Marcos <marcos.e.lazarte@gmail.com>
+Date:   Thu Nov 18 11:29:15 2021 -0300
+
+    Merge branch 'master' of https://github.com/MarcosLazarte/backend
+
+[33mcommit 78d82fdf85c92236223c61f75c5fed6125fd28b2[m
+Author: Marcos <marcos.e.lazarte@gmail.com>
+Date:   Thu Nov 18 11:28:45 2021 -0300
+
+    Agrugue middle api y hbs
+
+[33mcommit 5da9d5cd7e6f197c652a6d185d799f9d2f3a52f7[m
+Author: MarcosLazarte <marcos.e.lazarte@gmail.com>
+Date:   Thu Nov 18 08:23:02 2021 -0300
+
+    Test VS cdoe from browser
+
+[33mcommit 08ccf5ff8f4d8cd0e177f3a824b34b19d0ec1199[m
+Author: Marcos <marcos.e.lazarte@gmail.com>
+Date:   Tue Nov 16 22:58:04 2021 -0300
+
+    Agregado Delete
+
+[33mcommit 9757692ac3cc29f1af193e688bd9f91f1c77c646[m
+Author: Marcos <marcos.e.lazarte@gmail.com>
+Date:   Tue Nov 16 21:05:27 2021 -0300
+
+    PUT mejorado
+
+[33mcommit f75e177345604fcec591c74d9fa4785360a8cba5[m
+Author: Marcos <marcos.e.lazarte@gmail.com>
+Date:   Mon Nov 15 09:31:27 2021 -0300
+
+    Agregado comentario en rutas
+
+[33mcommit be389c11da34a98873a0b680def9d164564dc1a4[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Sat Nov 13 13:46:43 2021 -0300
+
+    Se probo PUT and DELETE
+
+[33mcommit 2a8f7585594c69c228abf0103b397718a3f19f2d[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Sat Nov 13 00:12:34 2021 -0300
+
+    Hacer un post te regresa a la pagina del post vacia
+
+[33mcommit 2e21997ec34d4d9ca8f21edfc7f74d0165f659c4[m
+Merge: 5a2ef3b 617dcc0
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Fri Nov 12 23:54:44 2021 -0300
+
+    Merge branch 'master' of https://github.com/MarcosLazarte/backend
+    Se agrega la funcion de handlebars
+
+[33mcommit 5a2ef3b7d072431a155bc4efab78872ea733cd23[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Fri Nov 12 21:33:57 2021 -0300
+
+    Se cumplio la entrega 10 Handlebars
+
+[33mcommit 617dcc01c9134e1d075922338e93bfe41c3e7d13[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Fri Nov 12 14:10:11 2021 -0300
+
+    borrados los archivos clase
+
+[33mcommit 5f4b38790a49bb768c6952ee626d81bd375e9e64[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Fri Nov 12 13:51:16 2021 -0300
+
+    prueba 2 de node_modules
+
+[33mcommit 611263631c8af57c5aa6d826c14bbd71d8748a0f[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Fri Nov 12 13:43:24 2021 -0300
+
+    Se elimino temp
+
+[33mcommit 051f6dc37c2f7d602986be7892fed17ead81c447[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Fri Nov 12 13:40:09 2021 -0300
+
+    prueba de temp
+
+[33mcommit b2296ae27c4f9faafbcd1fbed0d66ab76b866656[m
+Author: Aky <marcos.e.lazarte@gmail.com>
+Date:   Thu Nov 11 22:23:10 2021 -0300
+
+    Se agrego POST y Listar de Handlebars

@@ -83,7 +83,7 @@ class Rutas {
             console.log(typeof(req.query.id));
             res.send('No deberias estar aqui');
         }else{
-            const id = req.query.id;
+            const id = parseInt(req.query.id);
             const title = req.query.title;
             const price = req.query.price;
             const thumbnail = req.query.thumbnail;

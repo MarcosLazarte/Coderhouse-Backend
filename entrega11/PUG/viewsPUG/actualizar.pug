@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title PUG/Actualizar
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        a(href='http://localhost:8080'): h1(style={color:'#4F2E27'}) PUG
+        a(href='http://localhost:8080/pug/vista'): span Vista
+        a(href='http://localhost:8080/pug/actualizar'): span Actualizar
+        a(href='http://localhost:8080/pug/borrar'): span Borrar
+        a(href='http://localhost:8080/pug/post'): span Post
+        div(class='formulario')
+            h1 Lista de
+            h1 Productos
+            table(class="tabla")
+                        tr
+                            th ID
+                            th Nombre
+                            th Precio
+                            th Foto URL
+                        each val in productos
+                            tr
+                                th=val.id
+                                th=val.title
+                                th=val.price
+                                th: img(class='tablaImagen' src=val.thumbnail alt='fotodeproducto')
+            br
+            h1 Actualizar
+            h1 Producto por ID
+            br
+            form(method="get" action='http://localhost:8080/pug/actualizarTest')
+                h3 ID
+                input(type='text' name='id')
+                h3 Nombre 
+                input(type="text" name='title')
+                h3 Precio 
+                input(type="text" name='price')
+                h3 Foto URL 
+                input(type="text" name='thumbnail')
+                br
+                br
+                input(type="submit") 
