@@ -86,7 +86,7 @@ class Rutas {
         } else {
             var listExists = true;
         }
-        res.render('borrar.pug', {productos: data, listExists});
+        res.render('borrar.ejs', {productos: data, listExists});
     }
     funcionEJSActualizarTest(req, res){
         if(typeof(req.query.id) != 'string' && typeof(req.query.id) != 'number'){
