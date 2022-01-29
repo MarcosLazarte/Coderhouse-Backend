@@ -1,20 +1,16 @@
 const socket = io()
 
-alert("holis")
-
 socket.on('global', data => {
     dibujar(data);
 });
+
 function emitCambio(event){
-    event.preventDefault()
     let nuevoProd = {
         title: event.target.elements.title.value,
         price: event.target.elements.price.value,
-        thumbnail: event.target.elements.thumbnail.value,
+        thumbnail: event.target.elements.thumbnail.value
     }
     socket.emit('primerCambio', nuevoProd)
-    alert("holis")
-    return false
 }
 function cambio(){
     alert("presionaste el boton")

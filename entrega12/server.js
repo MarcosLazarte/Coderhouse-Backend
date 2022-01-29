@@ -41,11 +41,9 @@ io.on('connection', (socket) => {
     let productos = Leer();
     console.log("cliente conectado");
     io.sockets.emit('global', productos);
+
     socket.on("primerCambio", (data) => {
         console.log("se agrego");
         io.sockets.emit('global', productos);
-    })
-    socket.on('segundoCambio', (data) => {
-        io.sockets.emit('respuesta', data);
     })
 })
