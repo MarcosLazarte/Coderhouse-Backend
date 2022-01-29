@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS/Borrar</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <% if (listExists) { %>
+        <div class="tablaPadding">
+            <table class="tabla">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Foto URL</th>
+                </tr>
+                <% productos.forEach(function(prod) { %>
+                <tr>
+                    <th><%= prod.id %></th>
+                    <th><%= prod.title %></th>
+                    <th><%= prod.price %></th>
+                    <th><img class="tablaImagen" src="<%= prod.thumbnail %>" alt="Foto de producto"></th>
+                </tr>
+                <% }) %>
+            </table>
+        </div>
+        <% } else{ %>
+        <div class="formNoHayProductos">
+            <%= productos.error %>
+        </div>
+        <% } %>
+        <form class="formulario" method="get" action="http://localhost:8080/ejs/borrarTest">
+            <h1>Borrar el producto<br>por ID</h1> <br>
+            <h3>ID</h3>
+            <input type="text" name="id" placeholder="escriba aqui">
+            <br>
+            <br>
+            <input type="submit" class="formEnviar" value="Enviar">
+        </form>
+    </main>
+    <%- include('partials/footer.ejs') %>
+</body>
+</html>
